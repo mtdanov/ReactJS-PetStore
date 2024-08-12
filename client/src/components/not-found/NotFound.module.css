@@ -1,0 +1,17 @@
+.notFound {
+    padding: 200px;
+}
+
+.container {
+    border: 2px solid rgb(164, 160, 160);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+
+.title {
+    font-size: 55px;
+}
