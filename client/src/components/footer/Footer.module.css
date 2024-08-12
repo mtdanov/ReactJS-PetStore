@@ -1,0 +1,24 @@
+.footer {
+    background-color: rgba(35, 185, 105, 0.893);
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+ 
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.paragraphs {
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.paragraphs:hover {
+    background-color: rgb(18, 149, 77);
+}
