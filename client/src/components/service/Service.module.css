@@ -1,0 +1,38 @@
+.service {
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.serviceContainer {
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.serviceContainer img {
+    width: 100%;
+    display: block;
+}
+
+.textOverlay {
+    position: absolute;
+    top: 0;
+    margin-top: 270px;
+
+}
+
+.textOverlay p {
+    color: #333;
+    font-size: 40px;
+    padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+    .textOverlay p {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
