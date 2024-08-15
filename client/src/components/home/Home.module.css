@@ -4,7 +4,7 @@
 }
 
 .homePic {
-    
+    object-fit: contain;
     max-width: 1500px;
     margin: 20px 350px;
     border-radius: 5px;
