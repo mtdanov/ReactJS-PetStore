@@ -1,0 +1,81 @@
+.register {
+    padding: 30px;
+}
+
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: 80vh;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.registerFields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+
+}
+
+.registerTitle {
+    font-size: 30px;
+    color: #333;
+}
+
+
+.registerInputs {
+    font-size: 20px;
+}
+
+.registerLabel {
+    font-size: 20px;
+}
+
+.registerBtn {
+    padding: 5px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.registerBtn:hover {
+    background-color: #218838;
+}
+
+.haveAcc {
+    margin-top: 20px;
+    color: #5c5c5c;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.loginHere {
+    font-size: 20px;
+    color: #ff7d41;
+    font-weight: 600;
+}
+
+.error {
+    display: block;
+    margin-top: 5px;
+    font-size: 20px;
+    color: #d9534f;
+}
