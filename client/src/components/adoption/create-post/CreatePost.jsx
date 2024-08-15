@@ -9,7 +9,7 @@ import { useValidation } from '../../../hooks/useValidation';
 
 import styles from './CreatePost.module.css'
 import Path from '../../../path';
-import Preloader from '../../Preloader/Preloader';
+import Preloader from '../../preloader/Preloader';
 
 const initialState = {
     name: '',

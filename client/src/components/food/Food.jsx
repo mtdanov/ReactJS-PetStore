@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 
-import * as productService from '../../services/productService'
+// import * as productService from '../../services/productService'
 import ProductsContext from '../../context/ProductContext'
-import Preloader from '../Preloader/Preloader'
+import Preloader from '../preloader/Preloader'
 
-import Product from '../Product/Product'
+import Product from '../product/Product'
 import styles from './Food.module.css'
 import search from '../../../public/images/search.png'
 

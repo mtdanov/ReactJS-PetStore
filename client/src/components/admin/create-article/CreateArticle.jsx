@@ -5,7 +5,7 @@ import * as articeService from '../../../services/articleService'
 import { useValidation } from '../../../hooks/useValidation';
 import useForm from '../../../hooks/useForm';
 import Path from '../../../path';
-import Preloader from '../../Preloader/Preloader';
+import Preloader from '../../preloader/Preloader';
 
 import upload_pic from '../../../../public/images/upload.png'
 import styles from './CreateArticle.module.css'

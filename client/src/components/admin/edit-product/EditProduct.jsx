@@ -10,7 +10,7 @@ import * as productService from '../../../services/productService'
 import styles from './EditProduct.module.css'
 import upload_pic from '../../../../public/images/upload.png'
 import useImageUpload from '../../../hooks/useImageUpload';
-import Preloader from '../../Preloader/Preloader';
+import Preloader from '../../preloader/Preloader';
 
 export default function EditProduct() {
     const { handleUpdateProductState } = useContext(ProductsContext)

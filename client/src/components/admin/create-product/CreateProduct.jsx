@@ -10,7 +10,7 @@ import { useValidation } from '../../../hooks/useValidation';
 
 import upload_pic from '../../../../public/images/upload.png'
 import styles from "./CreateProduct.module.css"
-import Preloader from '../../Preloader/Preloader';
+import Preloader from '../../preloader/Preloader';
 
 const initialState = {
   name: '',

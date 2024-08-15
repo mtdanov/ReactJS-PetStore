@@ -9,7 +9,7 @@ import upload_pic from '../../../../public/images/upload.png'
 import styles from './EditPost.module.css'
 import useImageUpload from "../../../hooks/useImageUpload";
 import Path from "../../../path";
-import Preloader from "../../Preloader/Preloader";
+import Preloader from "../../preloader/Preloader";
 
 export default function EditPost() {
     const navigate = useNavigate()

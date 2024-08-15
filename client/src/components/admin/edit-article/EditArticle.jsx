@@ -5,7 +5,7 @@ import useForm from '../../../hooks/useForm';
 import { useValidation } from '../../../hooks/useValidation';
 import * as articleService from '../../../services/articleService'
 import Path from '../../../path';
-import Preloader from '../../Preloader/Preloader';
+import Preloader from '../../preloader/Preloader';
 import useImageUpload from '../../../hooks/useImageUpload';
 
 import upload_pic from '../../../../public/images/upload.png'
