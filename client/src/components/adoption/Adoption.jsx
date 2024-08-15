@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Post from "./post/Post";
 import * as postService from '../../services/postService'
-import Preloader from '../Preloader/Preloader';
+import Preloader from '../preloader/Preloader';
 
 
 import styles from './Adoption.module.css'
