@@ -6,7 +6,7 @@ import AuthContext from '../../../context/AuthContext';
 import ProductsContext from '../../../context/ProductContext';
 import Comments from '../../comments/Comments';
 import useDelete from '../../../hooks/useDelete';
-import styles from './productDetails.module.css'
+import styles from './ProductDetails.module.css'
 
 
 export default function ProductDetails() {
