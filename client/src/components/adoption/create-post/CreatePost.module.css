@@ -1,0 +1,85 @@
+.createPost {
+    padding: 127px;
+}
+
+
+.formAnimal {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.formAnimal div {
+    margin-bottom: 15px;
+}
+
+.formAnimal label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.formAnimal input[type="text"],
+.formAnimal textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.formAnimal textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.createAnimalPic {
+    text-align: center;
+}
+
+.createAnimalPic label {
+    cursor: pointer;
+}
+
+.pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.createBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.createBtn:hover {
+    background-color: #4cae4c;
+}
+
+.error {
+    display: block;
+    margin-top: 5px;
+    font-size: 20px;
+    color: #d9534f;
+}
