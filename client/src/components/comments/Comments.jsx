@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import useForm from '../../hooks/useForm'
 import { useValidation } from '../../hooks/useValidation'
 import * as commentService from '../../services/commentService'
-import EditComment from './edit-comments/editComment'
+import EditComment from './edit-comments/EditComment'
 import DeleteModal from '../delete-modal/DeleteModal'
 
 import styles from './Comments.module.css'
