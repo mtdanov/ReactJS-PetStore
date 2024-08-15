@@ -21,7 +21,7 @@ export default function Profile() {
                         <img src={delivery_icon} alt="" />
                         <p>Поръчки</p>
                     </Link>
-                    <Link to={Path.Orders} className={styles.sidebarOption}>
+                    <Link to={Path.ProfileInfo} className={styles.sidebarOption}>
                         <img src={profile_icon} alt="" />
                         <p>Профил</p>
                     </Link>

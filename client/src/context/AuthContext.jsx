@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     logoutHandler,
     changeAuthState,
     role: auth.role,
-    userId: auth._id,
+    userId: auth.id,
     username: auth.username,
     email: auth.email,
     accessToken: auth.accessToken,
