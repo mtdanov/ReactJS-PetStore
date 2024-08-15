@@ -9,79 +9,79 @@ import "./Cart.css";
 
 
 export default function Cart() {
-  const navigate = useNavigate()
-  const { userId } = useContext(AuthContext)
-  const { cart, removeProduct, setQuantity, clearCart, } = useContext(ProductsContext)
-  
-  const [cartProducts, setProductsCart] = useState([])
-  const [totalPrice, setTotalPrice] = useState(0);
+    const navigate = useNavigate()
+    const { userId } = useContext(AuthContext)
+    const { cart, removeProduct, setQuantity, clearCart, } = useContext(ProductsContext)
 
-  const createOrder = (e) => {
-    e.preventDefault()
-    orderService.createOrder(userId, cartProducts).then(result => console.log(result)).catch(error => console.log(error))
-    clearCart()
-    navigate('/thank-you')
-  }
+    const [cartProducts, setProductsCart] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0);
 
-  const removeProductHandler = (id) => {
-    removeProduct(id)
-  }
+    const createOrder = (e) => {
+        e.preventDefault()
+        orderService.createOrder(userId, cartProducts).then(result => console.log(result)).catch(error => console.log(error))
+        clearCart()
+        navigate('/thank-you')
+    }
 
-  const sumCartProductsPrice = () => {
-    let sum = 0;
-    cartProducts.forEach((p) => {
-      sum += p.price * p.quantity
-    });
-    setTotalPrice(sum);
-  }
+    const removeProductHandler = (id) => {
+        removeProduct(id)
+    }
 
-  const changeQuantity = (e, id) => {
-    setQuantity(id, Number(e.target.value))
-  }
+    const sumCartProductsPrice = () => {
+        let sum = 0;
+        cartProducts.forEach((p) => {
+            sum += p.price * p.quantity
+        });
+        setTotalPrice(sum);
+    }
 
-  useEffect(() => {
-    setProductsCart(cart)
-  }, [cart])
+    const changeQuantity = (e, id) => {
+        setQuantity(id, Number(e.target.value))
+    }
 
-  useEffect(() => {
-    sumCartProductsPrice();
-  }, [cartProducts])
+    useEffect(() => {
+        setProductsCart(cart)
+    }, [cart])
 
-  return (
-    <section className="cart-page">
-      <div className="cart">
-        {cartProducts.length == 0 ? (
-          <div className='empty'>Чантата е празна!</div>
-        ) : (
-          cartProducts.map(({ id, name, file, price, quantity, totalPrice }) => (
-            <div className='cart-product' key={id}>
-              <img className='cart-pic' src={`http://localhost:3010/images/${file}`} alt={name} />
-              <div className='cart-product-details'>
-                <div className='cart-product-name'>{name}</div>
-                <div className='cart-product-quantity'>
-                  <label className='cart-product-quantity-label' htmlFor='quantity'>Брой:</label>
-                  <input
-                    className='cart-product-quantity-input'
-                    type="number"
-                    name='quantity'
-                    value={quantity}
-                    onChange={(e) => { changeQuantity(e, id) }}
-                  />
-                </div>
-              </div>
-              <div className='cart-product-price'>{(totalPrice || price).toFixed(2)} лв.</div>
-              <button className='remove-btn' onClick={() => { removeProductHandler(id) }}>X</button>
+    useEffect(() => {
+        sumCartProductsPrice();
+    }, [cartProducts])
+
+    return (
+        <section className="cart-page">
+            <div className="cart">
+                {cartProducts.length == 0 ? (
+                    <div className='empty'>Чантата е празна!</div>
+                ) : (
+                    cartProducts.map(({ id, name, file, price, quantity, totalPrice }) => (
+                        <div className='cart-product' key={id}>
+                            <img className='cart-pic' src={file} alt={name} />
+                            <div className='cart-product-details'>
+                                <div className='cart-product-name'>{name}</div>
+                                <div className='cart-product-quantity'>
+                                    <label className='cart-product-quantity-label' htmlFor='quantity'>Брой:</label>
+                                    <input
+                                        className='cart-product-quantity-input'
+                                        type="number"
+                                        name='quantity'
+                                        value={quantity}
+                                        onChange={(e) => { changeQuantity(e, id) }}
+                                    />
+                                </div>
+                            </div>
+                            <div className='cart-product-price'>{(totalPrice || price).toFixed(2)} лв.</div>
+                            <button className='remove-btn' onClick={() => { removeProductHandler(id) }}>X</button>
+                        </div>
+                    ))
+                )}
+                {cartProducts.length > 0 && (
+                    <div className='shopping-cart-summary'>
+                        <div className='total-price'>Общо: {totalPrice.toFixed(2)} лв.</div>
+                        <button className='cart-btn' onClick={createOrder}>Завърши поръчката</button>
+                    </div>
+                )}
             </div>
-          ))
-        )}
-        {cartProducts.length > 0 && (
-          <div className='shopping-cart-summary'>
-            <div className='total-price'>Общо: {totalPrice.toFixed(2)} лв.</div>
-            <button className='cart-btn' onClick={createOrder}>Завърши поръчката</button>
-          </div>
-        )}
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
