@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react'
 
-import AuthContext from '../../../contexts/authContext';
+import AuthContext from '../../../context/AuthContext';
 import * as articleService from '../../../services/articleService'
 import Comments from '../../comments/Comments';
 

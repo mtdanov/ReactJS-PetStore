@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-import AuthContext from "../../contexts/authContext";
+import AuthContext from "../../context/AuthContext";
 import Path from "../../path";
 import * as authService from "../../services/authService";
 import { useValidation } from "../../hooks/useValidation";
 import useError from "../../hooks/useErrorMessage";
-import ErrorMessage from "../errorMessage/ErrorMessage";
+import ErrorMessage from "../error-message/ErrorMessage";
+
 
 
 import styles from "./Login.module.css";

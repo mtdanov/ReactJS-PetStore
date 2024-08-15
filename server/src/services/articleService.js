@@ -4,7 +4,7 @@ exports.getAll = () => Article.find();
 
 exports.getById = (articleId) => Article.findById(articleId)
 
-exports.getLatest = () => Article.find().sort({ createdAt: -1 }).limit(4)
+exports.getLatest = () => Article.find().sort({ createdAt: -1 }).limit(3)
 
 exports.del = (id) => Article.findByIdAndDelete(id)
 

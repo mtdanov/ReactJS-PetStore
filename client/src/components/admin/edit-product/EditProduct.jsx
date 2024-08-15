@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useValidation } from '../../../hooks/useValidation';
 import useForm from '../../../hooks/useForm';
 import Path from '../../../path';
-import ProductsContext from '../../../contexts/productContext';
+import ProductsContext from '../../../context/ProductContext';
 import * as productService from '../../../services/productService'
 
 import styles from './EditProduct.module.css'

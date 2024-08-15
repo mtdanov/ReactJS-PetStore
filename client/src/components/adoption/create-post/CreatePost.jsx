@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import upload_pic from '../../../../public/images/upload.png'
-import AuthContext from '../../../contexts/authContext';
+import AuthContext from '../../../context/AuthContext';
 import * as  postService from '../../../services/postService'
 import useForm from '../../../hooks/useForm';
 import { useValidation } from '../../../hooks/useValidation';

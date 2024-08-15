@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './Toys.module.css'
-import ProductsContext from '../../contexts/productContext'
+import ProductsContext from '../../context/ProductContext'
 import Product from '../product/Product'
 import { useContext } from 'react'
 import search from '../../../public/images/search.png'

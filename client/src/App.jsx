@@ -1,8 +1,9 @@
+import "./App.css"
 import { Route, Routes } from "react-router-dom";
-import { ProductsProvider } from "./contexts/productContext";
-import { AuthProvider } from "./contexts/authContext";
-import Header from "./components/header/Header";
+import { ProductsProvider } from "./context/ProductContext";
+import { AuthProvider } from "./context/AuthContext";
 import Path from "./path";
+import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
@@ -10,14 +11,14 @@ import Blog from "./components/blog/Blog";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Cart from "./components/cart/Cart";
-import NotFound from "./components/NotFound/NotFound";
+import NotFound from "./components/not-found/NotFound";
 import Logout from "./components/logout/Logout";
 import Food from "./components/food/Food";
 import ArticleDetails from "./components/blog/article-details/ArticleDetails";
 import AdminPanel from "./components/admin/AdminPanel";
 import AdminGuard from "./guards/AdminGuard";
 import CreateProduct from "./components/admin/create-product/CreateProduct";
-import ProductDetails from "./components/Product/productDetails/productDetails";
+import ProductDetails from "./components/product/product-details/ProductDetails";
 import EditProduct from "./components/admin/edit-product/EditProduct";
 import Service from "./components/service/Service";
 import Profile from "./components/profile/Profile";
@@ -27,7 +28,7 @@ import Contact from "./components/contact/Contact";
 import DogCategory from "./components/dog/DogCategory";
 import CatCategory from "./components/cat/CatCategory";
 import Adoption from "./components/adoption/Adoption";
-import AdoptionDetails from './components/adoption/post-details/AdoptionDetails'
+import AdoptionDetails from './components/adoption/post-details/PostDetails'
 import ProfileInfo from "./components/profile/profile-info/ProfileInfo";
 import ThankYou from "./components/thank-you/ThankYou";
 import EditPost from "./components/adoption/edit-post/EditPost";
@@ -39,10 +40,8 @@ import CreateArticle from "./components/admin/create-article/CreateArticle";
 import EditArticle from "./components/admin/edit-article/EditArticle";
 import UserGuard from "./guards/UserGuard";
 // import Select from "./components/admin/select/Select";
-import CreateCategory from "./components/admin/select/create-category/CreateCategory";
+import CreateCategory from "./components/admin/create-category/CreateCategory";
 import GuestGuard from "./guards/GuestGuard";
-
-
 function App() {
   return (
     <AuthProvider>

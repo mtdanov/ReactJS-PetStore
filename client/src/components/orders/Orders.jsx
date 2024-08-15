@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-import AuthContext from "../../contexts/authContext"
+import AuthContext from "../../context/AuthContext"
 import * as orderService from '../../services/orderService'
+
 import styles from './Orders.module.css'
 
 export default function Orders() {

@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Navigate, Outlet } from "react-router-dom";
-import AuthContext from "../contexts/authContext"
+import AuthContext from "../context/AuthContext"
 import Path from "../path";
 
 export default function UserGuard() {

@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as orderService from '../../services/orderService'
-import ProductsContext from "../../contexts/productContext";
-import AuthContext from "../../contexts/authContext";
+import ProductsContext from "../../context/ProductContext";
+import AuthContext from "../../context/AuthContext";
 
 import "./Cart.css";
 

@@ -1,5 +1,5 @@
 import styles from './Treats.module.css'
-import ProductsContext from '../../contexts/productContext'
+import ProductsContext from '../../context/ProductContext'
 import Product from '../product/Product'
 import { useContext, useEffect, useState } from 'react'
 import search from '../../../public/images/search.png'

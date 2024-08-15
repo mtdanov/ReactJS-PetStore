@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 
-import AuthContext from '../../../contexts/authContext';
+import AuthContext from '../../../context/AuthContext';
 import AdoptionContact from '../adoption-contact/AdoptionContact';
 import * as postService from '../../../services/postService'
 
-import styles from './AdoptionDetails.module.css'
+import styles from './PostDetails.module.css'
 import useDelete from '../../../hooks/useDelete';
 
 export default function AdoptionDetails() {

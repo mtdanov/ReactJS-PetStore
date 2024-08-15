@@ -9,10 +9,12 @@ import exit from "../../../public/images/exit.png";
 
 import "./Header.css";
 import Path from "../../path";
-import AuthContext from "../../contexts/authContext";
+import AuthContext from "../../context/AuthContext";
+import ProductsContext from "../../context/ProductContext"
 
 export default function Header() {
   const { isAuthenticated, role } = useContext(AuthContext);
+  const { cart } = useContext(ProductsContext)
 
   return (
     <header className="navbar">
@@ -28,6 +30,9 @@ export default function Header() {
       </div> : <></>}
 
       <div className="navbar-menu">
+        <Link to={Path.Home} className="navbar-item">
+          Начало
+        </Link>
         <Link to={Path.DogCategory} className="navbar-item">
           Кучета
         </Link>
@@ -42,11 +47,6 @@ export default function Header() {
 
         <Link to={Path.Adoption} className="navbar-item">
           Осиновяване
-        </Link>
-
-
-        <Link to={Path.Home} className="navbar-item">
-          Начало
         </Link>
 
         <Link to={Path.Service} className="navbar-item">
@@ -82,6 +82,8 @@ export default function Header() {
         ) : (
           <></>
         )}
+
+        {cart.length > 0 ? <div className='cart-counter'>{cart.length}</div> : <></>}
         <Link to={Path.Cart}>
           <img className="cart-icon" src={shopping_cart} alt="" />
         </Link>

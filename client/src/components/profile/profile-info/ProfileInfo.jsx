@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import * as profileService from '../../../services/profileService';
-import AuthContext from "../../../contexts/authContext";
+import AuthContext from '../../../context/AuthContext';
 import useForm from '../../../hooks/useForm'
 
 import styles from './ProfileInfo.module.css'

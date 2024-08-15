@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import * as categoryService from '../../../services/categoryService'
 import * as productService from '../../../services/productService'
 import Path from '../../../path';
-import ProductsContext from '../../../contexts/productContext';
+import ProductsContext from '../../../context/ProductContext';
 import useForm from '../../../hooks/useForm';
 import { useValidation } from '../../../hooks/useValidation';
 

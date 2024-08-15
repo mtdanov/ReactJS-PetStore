@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 
 import * as productService from '../../../services/productService'
-import AuthContext from '../../../contexts/authContext';
-import ProductsContext from '../../../contexts/productContext';
+import AuthContext from '../../../context/AuthContext';
+import ProductsContext from '../../../context/ProductContext';
 import Comments from '../../comments/Comments';
 import useDelete from '../../../hooks/useDelete';
 import styles from './productDetails.module.css'

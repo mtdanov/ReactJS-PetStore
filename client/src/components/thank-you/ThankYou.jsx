@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from 'react'
 import * as profileService from '../../services/profileService'
 import thank from '../../../public/images/thanks.png'
 import styles from './ThankYou.module.css'
-import AuthContext from '../../contexts/authContext'
+import AuthContext from '../../context/AuthContext'
+
 export default function ThankYou() {
     const { userId } = useContext(AuthContext)
     const [profile, setProfile] = useState([])

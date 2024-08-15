@@ -6,7 +6,7 @@ import * as postService from '../services/postService'
 import * as articleService from '../services/articleService'
 import * as adoptionContactService from '../services/adoptionContactService'
 
-import ProductsContext from '../contexts/productContext'
+import ProductsContext from '../context/ProductContext'
 
 export default function useDelete() {
     const { handleDeleteProductState } = useContext(ProductsContext)

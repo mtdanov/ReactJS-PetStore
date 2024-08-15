@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 
-import AuthContext from '../../../contexts/authContext'
+import AuthContext from '../../../context/AuthContext'
+
 import * as adoptionContactService from '../../../services/adoptionContactService';
 import Message from './message/Message';
 

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
-import ProductsContext from "../../contexts/productContext";
+import ProductsContext from "../../context/ProductContext";
 import styles from './Product.module.css'
 
 export default function Product({ _id, name, file, price, totalPrice }) {

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 
 import * as productService from '../../services/productService'
-import ProductsContext from '../../contexts/productContext'
+import ProductsContext from '../../context/ProductContext'
 import Preloader from '../Preloader/Preloader'
 
 import Product from '../Product/Product'

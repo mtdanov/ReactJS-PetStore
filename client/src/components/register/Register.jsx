@@ -2,14 +2,15 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as authService from "../../services/authService";
 
-import AuthContext from "../../contexts/authContext";
+import AuthContext from "../../context/AuthContext";
 import Path from "../../path";
 
 import styles from "./Register.module.css"
 import useFormHandler from "../../hooks/useForm";
 import { useValidation } from "../../hooks/useValidation";
 import useError from "../../hooks/useErrorMessage";
-import ErrorMessage from "../errorMessage/ErrorMessage";
+import ErrorMessage from "../error-message/ErrorMessage";
+;
 
 const RegisterFormKeys = {
     Name: "name",

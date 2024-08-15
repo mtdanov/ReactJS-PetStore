@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { postValidator } from '../validations/postValidation';
 import { articleValidation } from '../validations/articleValidation';
 import { productValidation } from '../validations/productValidation';
-import { registerValidation } from '../validations/registerValidation';
+import { registerValidation } from '../validations/registeValidation';
 import { loginValidation } from '../validations/loginValidation';
 import { commentValidation } from '../validations/commentValidation';
 import { contactValidation } from '../validations/contactValidation';
