@@ -1,172 +1,81 @@
-import { useContext, useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+.editProduct {
+    padding: 20px;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+}
 
-import { useValidation } from '../../../hooks/useValidation';
-import useForm from '../../../hooks/useForm';
-import Path from '../../../path';
-import ProductsContext from '../../../contexts/productContext';
-import * as productService from '../../../services/productService'
+.postContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-import styles from './EditProduct.module.css'
-import upload_pic from '../../../../public/images/upload.png'
-import useImageUpload from '../../../hooks/useImageUpload';
-import Preloader from '../../Preloader/Preloader';
+.postForm {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
 
-export default function EditProduct() {
-    const { handleUpdateProductState } = useContext(ProductsContext)
-    const [validateForm, errors] = useValidation()
-    const [isloading, setloading] = useState(false)
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
 
-    const { id } = useParams()
-    const navigate = useNavigate()
-    const [product, setProduct] = useState({
-        name: '',
-        description: '',
-        price: '',
-        category: '',
-        type: '',
-        file: '',
-    })
-    const { image, imageFile, onImageChange } = useImageUpload(product.file);
+.formGroup {
+    margin-bottom: 20px;
+}
 
-    const { data, onChange, onSubmit, } = useForm(product, async (formData) => {
-        if (imageFile !== null) {
-            formData.append('file', imageFile);
-        } else if (image && typeof image === 'string') {
-            formData.append('fileUrl', image);
-        }
-        try {
-            if (validateForm('product', formData)) {
-                setloading(true)
-                const result = await productService.editProduct(id, formData)
-                handleUpdateProductState(result)
-                navigate(Path.Home)
-                setloading(false)
-            }
-        } catch (error) {
-            console.log(error.message);
-        }
-    });
+label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
 
+.formControl {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-    useEffect(() => {
-        productService.getById(id).then(result => setProduct(result)).catch(err => console.log(err))
-    }, [id])
+textarea.formControl {
+    resize: vertical;
+}
 
-    return (
-        <>
-            {isloading ? <Preloader /> :
-                <section className={styles.editProduct}>
-                    <div className={styles.postContainer}>
-                        <div className={styles.postForm}>
-                            <form onSubmit={onSubmit}>
-                                <h2 className={styles.title}>Редактирай Продукт</h2>
+.error {
+    color: red;
+    font-size: 20px;
+    margin-top: 5px;
+}
 
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="name">Име:</label>
-                                    <input
-                                        id="name"
-                                        className={styles.formControl}
-                                        name="name"
-                                        type="text"
-                                        placeholder="Enter Title"
-                                        value={data.name}
-                                        onChange={onChange}
-                                    />
-                                    {errors.name && <span className={styles.error}>{errors.name}</span>}
-                                </div>
+.pic {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
 
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="price">Цена:</label>
-                                    <input
-                                        id="price"
-                                        className={styles.formControl}
-                                        name="price"
-                                        type="number"
-                                        placeholder="Enter Title"
-                                        value={data.price}
-                                        onChange={onChange}
-                                    />
-                                    {errors.price && <span className={styles.error}>{errors.price}</span>}
-                                </div>
+.editBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
 
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="category">Категория:</label>
-                                    <select
-                                        id="category"
-                                        className={styles.formControl}
-                                        name="category"
-                                        value={data.category}
-                                        onChange={onChange}
-                                    >
-                                        <option value="">Избере категория</option>
-                                        <option value="cat-food">Котки</option>
-                                        <option value="dog-food">Кучета</option>
-                                        <option value="dog-toys">Играчка за кучета</option>
-                                        <option value="cat-toys">Играчка за котки</option>
-                                        <option value="dog-treats">Лакомства за кучета</option>
-                                        <option value="cat-treats">Лакомства за котки</option>
-                                    </select>
-                                    {errors.category && <span className={styles.error}>{errors.category}</span>}
-                                </div>
-
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="type">Вид:</label>
-                                    <select
-                                        id="type"
-                                        className={styles.formControl}
-                                        name="type"
-                                        value={data.type}
-                                        onChange={onChange}
-                                    >
-                                        <option value=""></option>
-                                        <option value="medical">Лечебна</option>
-                                        <option value="wet">Мокра</option>
-                                        <option value="dry">Суха</option>
-                                    </select>
-                                    {errors.type && <span className={styles.error}>{errors.type}</span>}
-                                </div>
-
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="description">Описание:</label>
-                                    <textarea
-                                        id="description"
-                                        className={styles.formControl}
-                                        name="description"
-                                        cols="30"
-                                        rows="10"
-                                        value={data.description}
-                                        onChange={onChange}
-                                    ></textarea>
-                                    {errors.description && <span className={styles.error}>{errors.description}</span>}
-                                </div>
-
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="file">
-                                        <img
-                                            className={styles.pic}
-                                            src={image ? image : upload_pic}
-                                            alt=""
-                                        />
-                                    </label>
-                                    <input
-                                        id="file"
-                                        className={styles.formControl}
-                                        type="file"
-                                        name="file"
-                                        placeholder="Select File"
-                                        onChange={onImageChange} />
-
-                                    {errors.file && <span className={styles.error}>{errors.file}</span>}
-                                </div>
-
-                                <button type="submit" className={styles.editBtn}>Редактирай</button>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-            }
-        </>
-
-    )
+.editBtn:hover {
+    background-color: #4cae4c;
 }
