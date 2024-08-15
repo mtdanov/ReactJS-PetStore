@@ -9,13 +9,17 @@ export default function AdminPanel() {
     return (
         <div className={styles.sidebar}>
             <div className={styles.sidebarOptions}>
-                <Link to={Path.Select} className={styles.sidebarOption}>
+                <Link to={Path.CreateProduct} className={styles.sidebarOption}>
                     <img src={add_icon} alt="" />
                     <p>Създай Продукт</p>
                 </Link>
                 <Link to={Path.CreateArticle} className={styles.sidebarOption}>
                     <img src={add_icon} alt="" />
                     <p>Създай Статия</p>
+                </Link>
+                <Link to={Path.CreateCategory} className={styles.sidebarOption}>
+                    <img src={add_icon} alt="" />
+                    <p>Създай Категория</p>
                 </Link>
             </div>
         </div>
