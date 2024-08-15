@@ -1,0 +1,88 @@
+.blogPage {
+    padding: 20px;
+  }
+  
+  .blog {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Blog details section */
+  .blogDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Article title styling */
+  .articleTitle {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .articleImg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .articleDescription {
+    font-size: 25px;
+    color: #555;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .adminBtns {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .editBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .editBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .deleteBtn {
+    padding: 10px 20px;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #c82333;
+  }
+  
+  .comments {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
