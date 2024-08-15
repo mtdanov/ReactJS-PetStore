@@ -1,11 +1,6 @@
 const Category = require('../model/Category')
 
-
-exports.create = async (name) => {
-
-    await Category.create(name)
-
-}
+exports.create = (name) => Category.create(name)
 
 exports.getCategories = async () => {
 

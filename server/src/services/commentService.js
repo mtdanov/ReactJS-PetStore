@@ -31,5 +31,7 @@ exports.getComments = async (type, id) => {
 }
 
 exports.getComment = (id) => Comment.findById(id)
+
 exports.del = (id) => Comment.findByIdAndDelete(id)
+
 exports.editComment = (id, comment) => Comment.findByIdAndUpdate(id, { comment }, { new: true })

@@ -25,8 +25,6 @@ const secret = 'dasdsaudfgqwuey31ou31413rasadtewt';
 // };
 exports.auth = async (req, res, next) => {
   const token = req.headers['x-authorization'];
-  // console.log(`${token} token`);
-  // console.log(`${req.user} user 30red`)
 
 
   if (!token) {
@@ -35,11 +33,7 @@ exports.auth = async (req, res, next) => {
 
   try {
     const decodedToken = await jwt.verify(token, secret);
-    // console.log(`${decodedToken} 33`);
-
-
     req.user = decodedToken;
-    // console.log(`${req.user} 36`);
     res.locals.isAuthenticated = true;
     next();
   } catch (err) {

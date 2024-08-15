@@ -9,7 +9,7 @@ function generateToken(user) {
    };
    // console.log(`${payload} 10 red`);
    
-   return jwt.sign(payload, secret, { expiresIn: '3h' });
+   return jwt.sign(payload, secret, { expiresIn: '2d' });
 };
 
 module.exports = generateToken;

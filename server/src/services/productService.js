@@ -2,6 +2,7 @@ const Product = require('../model/Product')
 const Category = require('../model/Category')
 
 exports.getAll = () => Product.find();
+
 exports.getById = (productId) => Product.findById(productId)
 
 exports.getByIdEdit = async (productId) => {
@@ -11,22 +12,25 @@ exports.getByIdEdit = async (productId) => {
 }
 
 exports.getFood = async (category) => {
-    // console.log(category);
-
     const result = await Category.findOne({ name: category }).populate('products')
-
     return result.products
 }
 exports.getLatest = () => Product.find().sort({ createdAt: -1 }).limit(8)
+
 exports.del = (id) => Product.findByIdAndDelete(id)
+
 exports.create = async (data) => {
     const product = await Product.create(data)
     await Category.findByIdAndUpdate(data.category, { $push: { products: product._id } })
     return product
 }
-exports.editProduct = async (id, { ...data }) => {
-    const result = await Product.findByIdAndUpdate(id, data, { new: true })
-    console.log(result);
 
+exports.editProduct = async (id, { name, description, category, type, file, price, file: imageUrl }) => {
+    const categoryId = await Category.findOne({ name: category })
+    if (categoryId) {
+        const catId = categoryId._id
+        category = catId
+    }
+    const result = await Product.findByIdAndUpdate(id, { name, description, category, type, file, price, file: imageUrl }, { new: true })
     return result
 } 

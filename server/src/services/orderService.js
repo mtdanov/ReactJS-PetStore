@@ -1,14 +1,15 @@
 const Order = require('../model/Order')
 const User = require('../model/User');
 
-
 exports.getOrders = async (id) => {
     const orders = await Order.find({ userId: id })
     return orders
 }
-exports.getOrder = async (id) => {
-    const order = await Order.findById({ _id: id })
 
+exports.getOrder = async (id) => {
+    console.log(id)
+    const order = await Order.findById({ _id: id })
+    console.log(`${order} order`)
     return order
 }
 
