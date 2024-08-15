@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import home_pic from '../../../public/images/home.jpg'
 
-import Product from "../Product/Product";
+import Product from "../product/Product";
 import Article from "../blog/article/Article";
 import * as productService from '../../services/productService'
 import * as articleService from '../../services/articleService'
