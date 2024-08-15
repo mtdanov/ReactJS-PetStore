@@ -1,0 +1,118 @@
+.comments {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px 0px;
+}
+
+.articleComments {
+    list-style-type: none;
+    padding: 0;
+}
+
+.articleComments h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.articleComments li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.articleComments li p {
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+.commentOwnerBtns {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.ownerEditBtn,
+.ownerDeleteBtn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ownerEditBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.ownerEditBtn:hover {
+    background-color: #45a049;
+}
+
+.ownerDeleteBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+.ownerDeleteBtn:hover {
+    background-color: #da190b;
+}
+
+.createComment {
+    margin-top: 20px;
+}
+
+.commentLabel {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.commentBtn {
+    width: 200px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.commentBtn:hover {
+    background-color: #4cae4c;
+}
+
+.noComments {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+
+.error {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.875em;
+    color: #d9534f;
+}
